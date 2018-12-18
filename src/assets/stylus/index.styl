@@ -147,6 +147,55 @@
 // 轮播图的页面
 .page1 {
     background-color: #BE8651;
+    .title {
+        position:absolute;
+        left: p2r(32);
+        top: p2r(32);
+        padding-left: p2r(20);
+        h3 {
+            color:#fff;
+            font-size:p2r(64);
+        }
+        p{
+            color:#fff;
+            font-size:p2r(24);
+            padding-top: p2r(12);
+        }
+        .line{
+            height: 100%;
+            width: p2r(5);
+            background-color #fff;
+            position: absolute;
+            top:0;
+            left:0;
+        }
+    }
+    .scroll-page1 { //轮播区域1
+        .bg{
+            whRem(576,573)
+            bgc('../images/page2/bg1.png',576)
+            bottom:p2r(252);
+        }
+        .person {
+            whRem(439,349)
+            bgc('../images/page2/front1.png',439)
+            bottom:p2r(290);
+        }
+        .sphere{
+            whRem(640,356)
+            bgc('../images/page2/sphere1.png',640)
+            bottom:p2r(0);
+        }
+        .message-container {
+            whRem(363,119)
+            bg('../images/page2/txt-bubbl.png')
+            bottom:p2r(140);
+            right:p2r(140);
+            .info {
+
+            }
+        }
+    }   
 }
 .page2 {
     background-color: #EE4143;
