@@ -99,3 +99,19 @@ import zeptoTouch from 'zepto/src/touch.js'
 
 `"build":"webpack --confg webpack.config.js"`
 
+## 9. 配置webpack开发环境
++ webpack.config.js中开启sourcemap
+  `devtool: 'inline-source-map',`
++ 安装 webpack-dev-server
+  - `yarn add -D webpack-dev-servers`
+  - webpack.config.js中加入devServer的配置  hot:true是启用hotmodulereplacement
+    ```
+    devServer: {
+        contentBase: './dist',
+        hot: true
+    },
+    ```
+  - package.json中增加启动脚本
+    `"start": "webpack-dev-server --mode=development --open",`
+
+

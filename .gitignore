@@ -32,6 +32,9 @@ bower_components
 # Compiled binary addons (https://nodejs.org/api/addons.html)
 build/Release
 
+# 打包后生成的文件目录
+dist/
+
 # Dependency directories
 node_modules/
 jspm_packages/
