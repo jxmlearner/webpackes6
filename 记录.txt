@@ -91,5 +91,5 @@ import zeptoTouch from 'zepto/src/touch.js'
 
 8. package.json的scripts中添加打包脚本
 
-"start":"webpack --confg webpack.config.js"
+"build":"webpack --confg webpack.config.js"
 
