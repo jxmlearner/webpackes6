@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>webpack打包移动端项目示例 - <%= htmlWebpackPlugin.options.title %></title>
+    <script>
+        document.querySelector('html').style.fontSize = window.screen.width / 20 +'px'
+        window.onresize=function() {
+            document.querySelector('html').style.fontSize = window.screen.width / 20 +'px'
+        }
+    </script>
+</head>
+<body>
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">1</div>
+            <div class="swiper-slide">2</div>
+            <div class="swiper-slide">3</div>
+            <div class="swiper-slide">4</div>
+            <div class="swiper-slide">5</div>
+            <div class="swiper-slide">6</div>
+            <div class="swiper-slide">7</div>
+        </div>
+    </div>
+    <!-- loading页面 -->
+    <div class="loading">
+        <div class="rider"></div>
+        <div class="progress"></div>
+        <div class="info"></div>
+        <!-- logo -->
+        <div class="logo"></div>
+        <!-- 版权说明 -->
+        <div class="copyright">
+            @ 2018 Baidu Waimai Produced
+        </div>
+    </div>
+    <!-- 欢迎页面 -->
+    <div class="welcome">
+        <div class="info">
+            <div class="hello"></div>
+        </div>
+        <!-- 熊动画box -->
+        <div class="bear-box">
+            <div class="bear"></div>
+            <div class="smoke"></div>
+        </div>
+        <!-- 云 -->
+        <div class="cloud">
+            
+        </div>
+    </div>    
+</body>
+</html>

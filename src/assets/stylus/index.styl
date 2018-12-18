@@ -1,0 +1,111 @@
+@import './base.styl';
+
+.swiper-container {
+    height: 100%;
+}
+.swiper-slide {
+    font-size: 100px;
+    box-sizing: border-box;
+    border: 10px solid hotpink
+}
+.loading {    
+    height: 100%;
+    width: 100%;
+    background-color: #ffece9;
+    position: absolute;
+    top:0;
+    .rider {
+        width:(154/32)*1rem;
+        height:(121/32)*1rem;
+        background:url('../images/loading/rider1_.png') no-repeat center / 100% 100%;
+        position: absolute;
+        top:(233/32)*1rem;
+        right:(108/32)*1rem;
+    }
+    .progress {
+        width: (416/32)*1rem;
+        height:(20/32)*1rem;
+        background-color #fc2e4d;
+        border:2px solid #373838;
+        border-radius:(20/32)*1rem;
+        position:absolute;
+        left: 50%;
+        margin-left: (-416/32/2)*1rem;
+        top:(360/32)*1rem;
+    }
+    .info { 
+        width:(220/32)*1rem;
+        height:(28/32)*1rem;
+        background:url('../images/loading/loading-txt.png') no-repeat center / 100% 100%;
+        position: absolute;
+        left: 50%;
+        margin-left: (-220/32/2)*1rem;
+        top:(420/32)*1rem;
+    }
+    .logo {
+        width:(162/32)*1rem;
+        height: (39/32)*1rem;
+        background:url(../images/loading/waimai-logo.png) no-repeat center / 100% 100%;
+        position:absolute;
+        bottom:(118/32)*1rem;
+        left: 50%;
+        margin-left:(-162/32/2)*1rem;
+    }
+    .copyright{
+        font-size:(24/32)    *1rem;
+        color: #e0979d;
+        position:absolute;
+        bottom:(73/32)*1rem;
+        left:50%;
+        white-space: nowrap;
+        transform: translateX(-50%)
+    }
+}
+.welcome {
+    height: 100%;
+    width: 100%;
+    background-color: deepskyblue;    
+    position: absolute;
+    top:0; 
+    .info{
+        width:(397/32)*1rem;
+        height:(224/32)*1rem;
+        background:url(../images/page1/theme-title.png) no-repeat center / 100% 100%;
+        position:absolute;
+        top:(42/32)*1rem;
+        left: 50%;
+        margin-left:(-397/32/2)*1rem;
+        .hello {
+            width: (70/32)*1rem;
+            height: (75/32)*1rem;
+            background: url(../images/page1/hello.png) no-repeat center / 100% 100%;
+            position: absolute;
+            top:(20/32)*1rem;
+            right:(8/32)*1rem;
+        }        
+    } 
+    .bear-box {
+        width:(167/32)*1rem;
+        height:(279/32)*1rem;
+        position:absolute;
+        bottom:(346/32)*1rem;
+        left: 50%;
+        margin-left: (-167/32/2)*1rem;            
+        .bear {
+            width: 100%;
+            height: 100%;
+            background: url(../images/page1/rider2.png) no-repeat center / 100% 100%;
+            position:absolute;
+            top:0;
+            left:0;
+        }
+        .smoke {
+            width:(167/32)*1rem;
+            height:(32/32)*1rem;
+            background:url(../images/page1/jet1.png) no-repeat center / 100% 100%;
+            position:absolute;
+            bottom:0;
+            left:0;
+        }
+    }          
+}

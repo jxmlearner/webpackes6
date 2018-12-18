@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Swiper使用示例</title>
+    <script>
+        document.querySelector('html').style.fontSize = window.screen.width / 20 +'px'
+        window.onresize=function() {
+            document.querySelector('html').style.fontSize = window.screen.width / 20 +'px'
+        }
+    </script>
+    <link href="node_modules/swiper/dist/css/swiper.min.css" rel="stylesheet" />
+    <style>
+        *{padding:0; margin:0;}
+        html,body{
+            height: 100%;
+        }
+        .swiper-container {
+            height: 100%;
+        }
+        .swiper-slide {
+            font-size: 100px;
+            box-sizing: border-box;
+            border: 10px solid hotpink
+        }
+        .loading {
+            background-color: skyblue;
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            z-index: 10;
+            top:0;
+        }
+        .welcome {
+            background-color: lightseagreen;
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            z-index: 10;
+            top:0;            
+        }
+    </style>
+</head>
+<body>
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">1</div>
+            <div class="swiper-slide">2</div>
+            <div class="swiper-slide">3</div>
+            <div class="swiper-slide">4</div>
+            <div class="swiper-slide">5</div>
+            <div class="swiper-slide">6</div>
+            <div class="swiper-slide">7</div>
+        </div>
+    </div>
+    <!-- loading页面 -->
+    <div class="loading">
+        
+    </div>
+    <!-- 欢迎页面 -->
+    <div class="welcome">
+
+    </div>
+    <script src="node_modules/swiper/dist/js/swiper.min.js"></script>
+    <script src="node_modules/zepto/dist/zepto.min.js"></script>
+    <script src="node_modules/zepto/src/event.js"></script>
+    <script src="node_modules/zepto/src/fx.js"></script>
+    <script src="node_modules/zepto/src/fx_methods.js"></script>
+    <script src="node_modules/zepto/src/touch.js"></script>
+    
+    <script>
+        var swiper = new Swiper('.swiper-container',{
+            direction: 'vertical'
+        })
+        $('.loading').on('click',function(){
+            $(this).fadeOut()
+        })
+        $('.welcome').on('click',function(){
+            $(this).fadeOut()
+        })
+    </script>
+</body>
+</html>
