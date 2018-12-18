@@ -1,4 +1,5 @@
 @import './base.styl';
+@import './common.styl';
 
 .swiper-container {
     height: 100%;
@@ -6,7 +7,7 @@
 .swiper-slide {
     font-size: 100px;
     box-sizing: border-box;
-    border: 10px solid hotpink
+    // border: 10px solid hotpink
 }
 .loading {    
     height: 100%;
@@ -14,48 +15,39 @@
     background-color: #ffece9;
     position: absolute;
     top:0;
+    z-index: 2;
     .rider {
-        width:(154/32)*1rem;
-        height:(121/32)*1rem;
+        whRem(154,121)
         background:url('../images/loading/rider1_.png') no-repeat center / 100% 100%;
         position: absolute;
-        top:(233/32)*1rem;
-        right:(108/32)*1rem;
+        top:p2r(233);
+        right:p2r(108);
     }
     .progress {
-        width: (416/32)*1rem;
-        height:(20/32)*1rem;
+        whRem(416,20)
         background-color #fc2e4d;
         border:2px solid #373838;
-        border-radius:(20/32)*1rem;
+        border-radius:p2r(20);
         position:absolute;
         left: 50%;
-        margin-left: (-416/32/2)*1rem;
-        top:(360/32)*1rem;
+        margin-left: p2r(-416/2);
+        top:p2r(360);
     }
     .info { 
-        width:(220/32)*1rem;
-        height:(28/32)*1rem;
-        background:url('../images/loading/loading-txt.png') no-repeat center / 100% 100%;
-        position: absolute;
-        left: 50%;
-        margin-left: (-220/32/2)*1rem;
-        top:(420/32)*1rem;
+        whRem(220,28)
+        bgc('../images/loading/loading-txt.png',220)
+        top:p2r(420);
     }
     .logo {
-        width:(162/32)*1rem;
-        height: (39/32)*1rem;
-        background:url(../images/loading/waimai-logo.png) no-repeat center / 100% 100%;
-        position:absolute;
+        whRem(162,39)
+        bgc('../images/loading/waimai-logo.png',162)
         bottom:(118/32)*1rem;
-        left: 50%;
-        margin-left:(-162/32/2)*1rem;
     }
     .copyright{
-        font-size:(24/32)    *1rem;
+        font-size:p2r(24);
         color: #e0979d;
         position:absolute;
-        bottom:(73/32)*1rem;
+        bottom:p2r(73);
         left:50%;
         white-space: nowrap;
         transform: translateX(-50%)
@@ -67,45 +59,110 @@
     background-color: deepskyblue;    
     position: absolute;
     top:0; 
+    z-index: 1;
     .info{
-        width:(397/32)*1rem;
-        height:(224/32)*1rem;
-        background:url(../images/page1/theme-title.png) no-repeat center / 100% 100%;
-        position:absolute;
-        top:(42/32)*1rem;
-        left: 50%;
-        margin-left:(-397/32/2)*1rem;
+        whRem(397,224)
+        bgc('../images/page1/theme-title.png',397)
+        top:p2r(42);
         .hello {
-            width: (70/32)*1rem;
-            height: (75/32)*1rem;
-            background: url(../images/page1/hello.png) no-repeat center / 100% 100%;
-            position: absolute;
-            top:(20/32)*1rem;
-            right:(8/32)*1rem;
+            whRem(70,75)
+            bg('../images/page1/hello.png')
+            top:p2r(20);
+            right:p2r(8);
         }        
     } 
     .bear-box {
-        width:(167/32)*1rem;
-        height:(279/32)*1rem;
+        whRem(167,279)
         position:absolute;
-        bottom:(346/32)*1rem;
+        bottom:p2r(346);
         left: 50%;
-        margin-left: (-167/32/2)*1rem;            
+        margin-left: p2r(-167/2);            
         .bear {
             width: 100%;
             height: 100%;
-            background: url(../images/page1/rider2.png) no-repeat center / 100% 100%;
-            position:absolute;
+            bg('../images/page1/rider2.png')
             top:0;
             left:0;
         }
         .smoke {
-            width:(167/32)*1rem;
-            height:(32/32)*1rem;
-            background:url(../images/page1/jet1.png) no-repeat center / 100% 100%;
-            position:absolute;
+            whRem(167,32)
+            bg('../images/page1/jet1.png')
             bottom:0;
             left:0;
         }
-    }          
+    } 
+    .cloud { /*云*/
+        whRem(640,673)
+        bg('../images/page1/clouds.png')
+        bottom:0;
+    } 
+    .grass1 {  /*草地1*/
+        whRem(640,396)
+        bg('../images/page1/grass1.png')
+        bottom:0;
+    }         
+    .trees { /*树*/
+        whRem(599,71)
+        bg('../images/page1/trees.png')
+        bottom:p2r(352);
+    }  
+    .grass2 { /*草地2*/
+        whRem(640,228)
+        bg('../images/page1/grass2.png')
+        bottom:0;
+    }   
+    // 旋转按钮
+    .rotate-btn-box {
+        whRem(208,208)        
+        position: absolute;
+        bottom:p2r(86);
+        left: 50%;
+        margin-left: p2r(-208/2);
+        display: flex;
+        align-items: center
+        justify-content: center;
+        .btn {
+            whRem(124,113)
+            background: url('../images/page1/bear-btn-pre.png') no-repeat center / 100% 100%;
+        }
+        .circle1 {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            left 0;
+            top: 0;
+            background: url('../images/page1/circle1.png') no-repeat center / 100% 100%;
+        }
+        .circle2 {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            left 0;
+            top: 0;
+            background: url('../images/page1/circle2.png') no-repeat center / 100% 100%;
+        }
+    }     
+}
+
+// 轮播图的页面
+.page1 {
+    background-color: #BE8651;
+}
+.page2 {
+    background-color: #EE4143;
+}
+.page3 {
+    background-color: #DD8A03;
+}
+.page4 {
+    background-color: #3FA100;
+}
+.page5 {
+    background-color: #0098CF;
+}
+.page6 {
+    background-color: #B527A0;
+}
+.page7 {
+    background-color: #19072A;
 }

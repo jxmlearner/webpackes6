@@ -1,6 +1,6 @@
 ## 1. `yarn add swiper zepto`
-## 2. 起先是想用js引入的方式直接写
-   还是练习一下webpack的使用以及ES6 import模块化加载的方式
+## 2. 起先是想用js引入的方式直接写    
+   还是练习一下webpack的使用以及ES6 import模块化加载的方式     
    `yarn add webpack webpack-cli`
 
 ## 3. 安装webpack的基本loader
@@ -111,7 +111,7 @@ import zeptoTouch from 'zepto/src/touch.js'
         hot: true
     },
     ```
-  - package.json中增加启动脚本
+  - package.json中增加启动脚本    
     `"start": "webpack-dev-server --mode=development --open",`
 
 
