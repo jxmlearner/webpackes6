@@ -144,32 +144,33 @@
     }     
 }
 
+.title {
+    position:absolute;
+    left: p2r(32);
+    top: p2r(32);
+    padding-left: p2r(20);
+    h3 {
+        color:#fff;
+        font-size:p2r(64);
+    }
+    p{
+        color:#fff;
+        font-size:p2r(24);
+        padding-top: p2r(12);
+    }
+    .line{
+        height: 100%;
+        width: p2r(5);
+        background-color #fff;
+        position: absolute;
+        top:0;
+        left:0;
+    }
+}
+
 // 轮播图的页面
 .page1 {
-    background-color: #BE8651;
-    .title {
-        position:absolute;
-        left: p2r(32);
-        top: p2r(32);
-        padding-left: p2r(20);
-        h3 {
-            color:#fff;
-            font-size:p2r(64);
-        }
-        p{
-            color:#fff;
-            font-size:p2r(24);
-            padding-top: p2r(12);
-        }
-        .line{
-            height: 100%;
-            width: p2r(5);
-            background-color #fff;
-            position: absolute;
-            top:0;
-            left:0;
-        }
-    }
+    background-color: #BE8651;    
     // 星球
     .sphere{
         whRem(640,356)
@@ -338,29 +339,6 @@
 }
 .page2 {
     background-color: #EE4143;
-    .title {
-        position:absolute;
-        left: p2r(32);
-        top: p2r(32);
-        padding-left: p2r(20);
-        h3 {
-            color:#fff;
-            font-size:p2r(64);
-        }
-        p{
-            color:#fff;
-            font-size:p2r(24);
-            padding-top: p2r(12);
-        }
-        .line{
-            height: 100%;
-            width: p2r(5);
-            background-color #fff;
-            position: absolute;
-            top:0;
-            left:0;
-        }
-    }
     .bg{
         whRem(592,490)
         bgc('../images/page3/bg4_.png',592)
@@ -426,6 +404,41 @@
 }
 .page3 {
     background-color: #DD8A03;
+    .bg{
+        whRem(592,580)
+        bgc('../images/page4/bg5.png',592)
+        bottom:p2r(300);
+        z-index:0;
+    }
+    .bear {
+        bgc('../images/page4/bear3.png',206)
+        whRem(206,321)
+        bottom: p2r(195);
+        z-index: 1;
+    }
+    .sphere {
+        whRem(640,356)
+        bg('../images/page4/sphere3.png')
+        bottom:0;
+        z-index:0;
+    }
+    .license {
+        bg('../images/page4/license.png')
+        whRem(197,140)
+        bottom: p2r(500);
+        left: p2r(40);
+    }
+    .oil {
+        bgc('../images/page4/oil.png',205)
+        whRem(205,107)
+        bottom: p2r(660);
+    }
+    .evil {
+        bg('../images/page4/evil2.png')
+        whRem(198,163)
+        bottom: p2r(480);
+        right: p2r(30);
+    }
 }
 .page4 {
     background-color: #3FA100;
