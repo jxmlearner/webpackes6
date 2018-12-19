@@ -103,7 +103,7 @@ import zeptoTouch from 'zepto/src/touch.js'
 + webpack.config.js中开启sourcemap
   `devtool: 'inline-source-map',`
 + 安装 webpack-dev-server
-  - `yarn add -D webpack-dev-servers`
+  - `yarn add -D webpack-dev-server`
   - webpack.config.js中加入devServer的配置  hot:true是启用hotmodulereplacement
     ```
     devServer: {
