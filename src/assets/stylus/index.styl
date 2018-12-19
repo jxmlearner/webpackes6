@@ -170,32 +170,171 @@
             left:0;
         }
     }
+    // 星球
+    .sphere{
+        whRem(640,356)
+        bgc('../images/page2/sphere1.png',640)
+        bottom:p2r(0);
+        z-index:1;
+    }
+    // 熊
+    .bear {
+        whRem(178,134)
+        bg('../images/page2/bear1.png',178)
+        right:p2r(38);
+        bottom:0;
+        z-index:1;
+    }
     .scroll-page1 { //轮播区域1
         .bg{
             whRem(576,573)
             bgc('../images/page2/bg1.png',576)
             bottom:p2r(252);
+            z-index:0;
         }
         .person {
             whRem(439,349)
             bgc('../images/page2/front1.png',439)
             bottom:p2r(290);
+            z-index: 2;
+            .files {
+                background-image:url('../images/page2/papers.png')
+                background-repeat: no-repeat;
+                background-position: bottom right;
+                background-size: p2r(115) p2r(114);
+                whRem(85,50)
+                bottom: p2r(104);
+                left: p2r(27);
+                position:absolute;
+                .paper1{
+                    background-image:url('../images/page2/papers.png')
+                    background-repeat: no-repeat;
+                    background-position: 0 p2r(-32);
+                    background-size: p2r(115) p2r(114);
+                    whRem(86,26)
+                    bottom: p2r(45);
+                    left: p2r(-70);
+                    position:absolute;
+                }
+                .paper2{
+                    background-image:url('../images/page2/papers.png')
+                    background-repeat: no-repeat;
+                    background-position: p2r(-45) 0;
+                    background-size: p2r(115) p2r(114);
+                    whRem(64,20)
+                    bottom: p2r(80);
+                    right: 0;
+                    position:absolute;
+                }
+            }
+        }        
+        .message-container {
+            whRem(363,119)
+            bg('../images/page2/txt-bubbl.png')
+            bottom:p2r(140);
+            right:p2r(140);
+            z-index: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .info {
+                whRem(220,30)
+                bg('../images/page2/txt-work.png')
+            }
         }
-        .sphere{
-            whRem(640,356)
-            bgc('../images/page2/sphere1.png',640)
-            bottom:p2r(0);
+    }
+    .scroll-page2 { //轮播区域2
+        .bg{
+            whRem(582,520)
+            bgc('../images/page2/bg2.png',582)
+            bottom:p2r(252);
+            z-index: 0;
+        }
+        .person {
+            whRem(436,332)
+            bgc('../images/page2/relax.png',436)
+            bottom:p2r(270);
+            z-index: 2;
+            .leg1 {
+                whRem(113,24)
+                bg('../images/page2/leg1.png')
+                bottom: p2r(110);
+                left: p2r(195);
+            }
+            .leg2 {
+                whRem(85,71)
+                bg('../images/page2/leg2.png')
+                bottom: p2r(120);
+                left: p2r(193);
+            }
         }
         .message-container {
             whRem(363,119)
             bg('../images/page2/txt-bubbl.png')
             bottom:p2r(140);
             right:p2r(140);
+            z-index: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             .info {
-
+                whRem(224,31)
+                bg('../images/page2/txt-life.png')
             }
         }
-    }   
+    }
+    .scroll-page3 { //轮播区域3
+        .bg{
+            whRem(561,516)
+            bgc('../images/page2/bg3.png',561)
+            bottom:p2r(270);
+            z-index: 0;
+        }
+        .person {
+            whRem(503,229)
+            bgc('../images/page2/person.png',503)
+            bottom:p2r(300);
+            z-index: 2; 
+            .word1 {
+                bg('../images/page2/word1.png')
+                whRem(92,83)
+                left: p2r(7)
+                bottom: p2r(194)
+            }         
+            .word2 {
+                bg('../images/page2/word2.png')
+                whRem(77,70)
+                left: p2r(115);
+                bottom: p2r(245);
+            }         
+            .word3 {
+                bg('../images/page2/word3.png')
+                whRem(115,104)
+                right: p2r(130);
+                bottom: p2r(220);
+            }         
+            .word4 {
+                bg('../images/page2/word4.png')
+                whRem(79,73)
+                right: p2r(12)
+                bottom: p2r(230)
+            }         
+        }
+        .message-container {
+            whRem(363,119)
+            bg('../images/page2/txt-bubbl.png')
+            bottom:p2r(140);
+            right:p2r(140);
+            z-index: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .info {
+                whRem(220,30)
+                bg('../images/page2/txt-res.png')
+            }
+        }
+    }
 }
 .page2 {
     background-color: #EE4143;

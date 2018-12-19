@@ -54,12 +54,12 @@ plugins: [
   + `yarn add -D babel-preset-env`
 + 配置webpack  module->rules
 ```
-    { test: /\.js$/, exclude: /node_modules/, loader: "babel-loader" }
+{ test: /\.js$/, exclude: /node_modules/, loader: "babel-loader" }
 
-    创建 .babelrc 配置文件
-    {
+创建 .babelrc 配置文件
+{
     "presets": ["env"]
-    }
+}
 ```
 
 ## 7. 因为zepto不是commonjs规范, 在模块化使用时需要特殊处理
