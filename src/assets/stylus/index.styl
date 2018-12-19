@@ -338,6 +338,91 @@
 }
 .page2 {
     background-color: #EE4143;
+    .title {
+        position:absolute;
+        left: p2r(32);
+        top: p2r(32);
+        padding-left: p2r(20);
+        h3 {
+            color:#fff;
+            font-size:p2r(64);
+        }
+        p{
+            color:#fff;
+            font-size:p2r(24);
+            padding-top: p2r(12);
+        }
+        .line{
+            height: 100%;
+            width: p2r(5);
+            background-color #fff;
+            position: absolute;
+            top:0;
+            left:0;
+        }
+    }
+    .bg{
+        whRem(592,490)
+        bgc('../images/page3/bg4_.png',592)
+        bottom:p2r(330);
+        z-index:0;
+    }
+    .bear {
+        background-image:url('../images/page3/bear2.png');
+        background-repeat: no-repeat;
+        background-size: p2r(368) p2r(427);
+        background-position: p2r(-103) p2r(-96);
+        position: absolute;
+        bottom: p2r(310);
+        left: 50%;
+        whRem(227,336)
+        margin-left: p2r(-227/2);
+        z-index: 1;
+        .face1 {
+            bg('../images/page3/face1.png')
+            whRem(102,102)
+            top:0;
+            left: p2r(-102)
+        }
+        .face2 {
+            bg('../images/page3/face2.png')
+            whRem(102,102)
+            top:p2r(-102);
+            right: p2r(-101/2)
+        }
+        .hand-left {
+            bg('../images/page3/hand-left_.png')
+            whRem(74,77)
+            top: p2r(180);
+            left: p2r(30);
+        }
+        .hand-right {
+            bg('../images/page3/hand-right.png')
+            whRem(74,77)
+            top: p2r(180);
+            right: p2r(30);
+        }
+    }
+    .sphere {
+        whRem(640,356)
+        bg('../images/page3/sphere2.png')
+        bottom:0;
+        z-index:0;
+    }
+    // 桌子
+    .table {
+        bgc('../images/page3/table.png',514)
+        whRem(514,258)
+        bottom:p2r(140);
+        z-index: 1;
+    }
+    // 桌子
+    .food {
+        bgc('../images/page3/foods.png',354)
+        whRem(354,152)
+        bottom:p2r(330);
+        z-index: 1;
+    }
 }
 .page3 {
     background-color: #DD8A03;
