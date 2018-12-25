@@ -15,7 +15,7 @@
     background-color: #ffece9;
     position: absolute;
     top:0;
-    z-index: 2;
+    z-index: 3;
     .rider {
         whRem(154,121)
         background:url('../images/loading/rider1_.png') no-repeat center / 100% 100%;
@@ -59,7 +59,7 @@
     background-color: deepskyblue;    
     position: absolute;
     top:0; 
-    z-index: 1;
+    z-index: 2;
     .info{
         whRem(397,224)
         bgc('../images/page1/theme-title.png',397)
@@ -640,5 +640,55 @@
         bg('../images/page8/sphere7.png')
         bottom:0;
         z-index:0;
+    }
+}
+
+/*
+    定义动画
+*/
+// 进度条动画
+@keyframes steps {
+    to {
+        width: 100%;
+    }
+}
+// 上下晃动前进动画
+@keyframes bearRide {
+    10% { transform: translateX(p2r(-26*1)) translateY(p2r(-5));}
+    20% { transform: translateX(p2r(-26*2)) translateY(p2r(5));}
+    30% { transform: translateX(p2r(-26*3)) translateY(p2r(-5));}
+    40% { transform: translateX(p2r(-26*4)) translateY(p2r(5));}
+    50% { transform: translateX(p2r(-26*5)) translateY(p2r(-5));}
+    60% { transform: translateX(p2r(-26*6)) translateY(p2r(5));}
+    70% { transform: translateX(p2r(-26*7)) translateY(p2r(-5));}
+    80% { transform: translateX(p2r(-26*8)) translateY(p2r(5));}
+    90% { transform: translateX(p2r(-26*9)) translateY(p2r(-5));}
+    100% { transform: translateX(p2r(-26*10)) translateY(p2r(5));}
+}
+
+
+/*
+    动画的样式  (先调整样式为动画的初始样式)
+*/
+.loading {
+    .progress {
+        background-color: transparent;
+        .step {
+            height: 100%;
+            width: 20%;
+            background-color:#FF2947;
+            position: absolute;
+            right:0;
+        }
+    }
+}
+
+/*触发动画*/
+.loading.animate {
+    .rider {
+        animation: bearRide 1.5s linear forwards;
+    }
+    .step {
+        animation: steps 1.5s linear forwards;
     }
 }

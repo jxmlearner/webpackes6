@@ -7,7 +7,7 @@
 `yarn add -D style-loader css-loader file-loader stylus stylus-loader url-loader`
 
 ## 4. 添加webpack.config.js并配置
-```
+```javascript
 const path = require('path')
 
 module.exports ={
@@ -29,7 +29,7 @@ module.exports ={
 ## 5. 安装 webpack的插件 (html-webpack-plugin和clean-webpack-plugin)
 `yarn add -D html-webpack-plugin clean-webpack-plugin`
 
-```
+```javascript
 在html中使用配置项的值
 <%= htmlWebpackPlugin.options.title %>
 
@@ -69,7 +69,7 @@ plugins: [
 - `yarn add -D exports-loader script-loader`
 
 webpack.config.js中需要配置如下 rules
-```
+```javascript
 {
     test: require.resolve('zepto'),
     loader: 'exports-loader?window.Zepto!script-loader'
@@ -87,7 +87,7 @@ new webpack.ProvidePlugin({
 ```
 
 使用之处：
-```
+```javascript
 import $ from 'zepto'
 import zeptoEvent from 'zepto/src/event.js'
 import zeptofx from 'zepto/src/fx.js'
@@ -105,7 +105,7 @@ import zeptoTouch from 'zepto/src/touch.js'
 + 安装 webpack-dev-server
   - `yarn add -D webpack-dev-server`
   - webpack.config.js中加入devServer的配置  hot:true是启用hotmodulereplacement
-    ```
+    ```javascript
     devServer: {
         contentBase: './dist',
         hot: true
