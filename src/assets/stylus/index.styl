@@ -666,7 +666,6 @@
     100% { transform: translateX(p2r(-26*10)) translateY(p2r(5));}
 }
 
-
 /*
     动画的样式  (先调整样式为动画的初始样式)
 */
@@ -686,9 +685,157 @@
 /*触发动画*/
 .loading.animate {
     .rider {
-        animation: bearRide 1.5s linear forwards;
+        animation: bearRide .5s linear forwards;
     }
     .step {
-        animation: steps 1.5s linear forwards;
+        animation: steps .5s linear forwards;
+    }
+}
+
+//welcome页动画
+@keyframes grass1 {
+    from {}
+    to {
+        height: p2r(396);
+    }
+}
+@keyframes grass2 {
+    from {
+        transform: scale(2,1)
+    }
+    to {
+        opacity: 1;
+    }
+}
+@keyframes trees {
+    from {
+        transform: translateY(-200%);
+    }
+    80% { transform: translateY(10%); opacity:1;}
+    90% { transform: translateY(-10%); opacity:1;}
+    100% { transform: none; opacity:1;}
+}
+@keyframes btnAppear {
+    from { }
+    to {opacity:1; transform: none;}
+}
+@keyframes rotate {
+    from {}
+    to { transform: rotate(360deg);}
+}
+@keyframes bearDown {
+    from {
+        transform: translateY(-50%)
+    }
+    to {
+        transform: none;
+        opacity: 1;
+    }
+}
+@keyframes upandDown {
+    from {
+        transform: translateY(-5%);
+    }
+    to {
+        transform: none;
+    }
+}
+@keyframes small2big {
+    from {
+        transform: scale(0,0);
+    }
+    to {
+        transform: none;
+        opacity: 1;
+    }
+}
+@keyframes bearDisappear {
+    from {
+        opacity: 1;
+    }
+    to {
+        transform: translateY(100%) scale(1.5,1.5);
+        opacity: 0;
+    }
+}
+
+/*welcome页的默认样式*/
+.welcome {
+    .grass1 {
+        height: p2r(20);
+    }
+    .grass2 {
+        opacity: 0;
+    }
+    .trees {
+        opacity: 0;
+    }
+    .rotate-btn-box {opacity: 0; transform: scale(0,0);}
+    .bear-box {
+        opacity: 0;
+    }
+    .smoke {
+        opacity: 0;
+    }
+    .info {
+        opacity: 0;
+    }
+    .hello {
+        opacity: 0;
+    }
+}
+.welcome.animate {
+    .grass1 {
+        animation: grass1 .5s forwards;
+    }
+    .grass2 {
+        animation: grass2 .5s .5s forwards;
+    }
+    .trees {
+        animation: trees .5s 1s forwards;
+    }
+    .rotate-btn-box {
+        animation: btnAppear 0.5s 1.5s forwards;
+    }
+    .circle2 {
+        animation: rotate 1s linear infinite;
+    }
+    .bear-box {
+        animation: bearDown 0.5s 2s forwards;
+    }
+    .bear {
+        animation: upandDown .5s 2.5s infinite;
+    }
+    .smoke {
+        animation: small2big 0.5s 2.5s infinite;
+    }
+    .info {
+        animation: bearDown 0.5s 3s forwards;
+    }
+    .hello {
+        animation: small2big 0.5s 3.5s forwards;        
+    }
+}
+
+// 所有slide页面共用的title动画
+@keyframes right2left {
+    from { transform: translateX(100%);}
+    to{ transform: none; opacity:1;}
+}
+@keyframes heightBigger {
+    from {}
+    to {height: 100%;}
+}
+
+.title {
+    h3 { opacity:0; }
+    p { opacity:0; }
+    .line { height:0%; }
+}
+.swiper-slide.animate {
+    .title {
+        h3 { animation: right2left .5s forwards; }
+        p { animation: right2left .5s .2s forwards; }
+        .line { animation: heightBigger .5s 0.7s forwards; }
     }
 }
