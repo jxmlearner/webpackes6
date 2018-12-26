@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>rotateZ样式</title>
+    <style>
+        .box {
+            height: 300px;
+            width: 50px;
+            transform-origin: left bottom;
+            background-color: hotpink;
+            margin: 0 auto;
+        }
+        .box.animate {
+            /*
+            rotateZ顺时针为正, 逆时针为负
+            */
+            transform: rotateZ(10deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>

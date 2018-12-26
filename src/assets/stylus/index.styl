@@ -839,3 +839,87 @@
         .line { animation: heightBigger .5s 0.7s forwards; }
     }
 }
+
+// 旋转进来 停一会 再转出去
+@keyframes rotateInOut {
+    0% { transform: rotateZ(90deg); }
+    25% { transform: rotateZ(-5deg); opacity: 1; }
+    30% { transform: rotateZ(0); opacity: 1; }
+    65% { transform: rotateZ(0); opacity: 1; }
+    70% { transform: rotateZ(5deg); opacity: 1; }
+    100% { transform: rotateZ(-90deg); opacity: 0; }
+}
+// 旋转进来，不出去
+@keyframes rotateInNotOut {
+    0% { transform: rotateZ(90deg); }
+    95% { transform: rotateZ(-5deg); opacity: 1; }    
+    100% { transform: rotateZ(0); opacity: 1; }
+}
+// 上下左右晃动
+@keyframes runUpDownLeftRight {
+    25% { transform: translateX(10%) translateY(0); }
+    50% { transform: translateX(-10%) translateY(10%); }
+    75% { transform: translateX(0) translateY(-10%); }
+    100% { transform: translateX(0) translateY(0); }
+}
+// 左右晃动
+@keyframes left2right2left {
+    30% {transform: translateX(-60%);}
+    60% {transform: translateX(60%);}
+    100% {transform: none;}
+}
+// 腿旋转回来
+@keyframes rotateBack {
+    to { transform: none; }
+}
+
+// swiper page1 动画
+.page1 {
+    .scroll-page1 {
+        .bg {opacity: 0; transform-origin: 50% 200%;}
+        .person {opacity: 0; transform-origin: 50% 200%;}
+        .message-container {opacity: 0; transform-origin: right bottom;}
+    }
+    .scroll-page2 {
+        .bg {opacity: 0; transform-origin: 50% 200%;}
+        .person {
+            opacity: 0; 
+            transform-origin: 50% 200%;
+            .leg2 { transform-origin: left bottom; transform:rotateZ(30deg);}
+        }
+        .message-container {opacity: 0; transform-origin: right bottom;}
+    }
+    .scroll-page3 {
+        .bg {opacity: 0; transform-origin: 50% 200%;}
+        .person {opacity: 0; transform-origin: 50% 200%;}
+        .message-container {opacity: 0; transform-origin: right bottom;}
+    }
+}
+.page1.animate {
+    .scroll-page1 {
+        .bg { animation: rotateInOut 1.5s forwards;}
+        .person {
+            animation: rotateInOut 1.5s .2s forwards;
+            .paper1 { animation: left2right2left .5s infinite; }
+            .paper2 { animation: left2right2left .8s infinite; }
+        }
+        .message-container { animation: rotateInOut 1s .5s forwards; }
+    }
+    .scroll-page2 {
+        .bg { animation: rotateInOut 1.5s 1.7s forwards;}
+        .person {
+            animation: rotateInOut 1.5s 1.9s forwards;
+            .leg2 { animation: rotateBack 0.5s 2.2s forwards;}
+        }
+        .message-container { animation: rotateInOut 1s 1.7s forwards; }
+    }
+    .scroll-page3 {
+        .bg { animation: rotateInNotOut .5s 3.4s forwards;}
+        .person {animation: rotateInNotOut .5s 3.6s forwards;}
+        .message-container { animation: rotateInNotOut 1s 3.4s forwards; }
+        .word1 { animation: runUpDownLeftRight 1s infinite; }
+        .word2 { animation: runUpDownLeftRight 1.2s infinite; }
+        .word3 { animation: runUpDownLeftRight .8s infinite; }
+        .word4 { animation: runUpDownLeftRight 2s infinite; }
+    }
+}
