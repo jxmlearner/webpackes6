@@ -923,3 +923,112 @@
         .word4 { animation: runUpDownLeftRight 2s infinite; }
     }
 }
+// 从下往上
+@keyframes bottom2Top {
+    from {transform: translateY(100%);}
+    to {transform: none; opacity: 1;}
+}
+// 由小变大，再变小
+@keyframes small2big2small {
+    from {transform: scale(0,0);}
+    95%{transform: scale(1.2,1.2); opacity: 1;}
+    100%{ transform: none; opacity: 1;}
+}
+//晃动的小手
+@keyframes handShake {
+    30% {transform: rotateZ(5deg);}
+    60% {transform: rotateZ(-5deg);}
+    100% {transform: none;}
+}
+// swiper page2 动画
+.page2 {
+    .bg{opacity:0; transform-origin: 50% 200%;}
+    .bear{
+        opacity:0;
+        .face1{opacity:0;}
+        .face2{opacity:0;}
+        .hand-left { transform-origin: left top;}
+        .hand-right { transform-origin: right top;}
+    }
+    .table{opacity:0;}
+    .food{opacity:0;}
+}
+.page2.animate {
+    .bg { animation: rotateInNotOut .5s forwards;}
+    .table {animation: bearDown .5s .5s forwards;}
+    .bear {
+        animation: bottom2Top .5s 1s forwards;
+        .face1 {
+            animation: small2big2small .5s 2s forwards;
+        }
+        .face2 {
+            animation: small2big2small .5s 2s forwards;
+        }
+        .hand-left { animation: handShake .2s infinite;}
+        .hand-right { animation: handShake .2s infinite;}
+    }
+    .food {animation: bearDown .5s 1.5s forwards;}
+}
+
+// swiper page3 动画
+.page3 {
+    .bg { opacity: 0;  transform-origin: 50% 200%; }
+    .bear { opacity: 0; }
+    .license { opacity: 0; }
+    .oil { opacity: 0; }
+    .evil { opacity: 0; }
+    // 踢牌子的熊
+    .animation-bear-box {
+        .animate-bear1 {
+            whRem(251,335)
+            bgc('../images/page4/bear3-1-1.png',251)
+            bottom: p2r(195);
+            z-index: 1;
+            opacity: 0;
+        }
+        .animate-bear2 {
+            whRem(215,313)
+            bgc('../images/page4/bear3-2-1.png',215)
+            bottom: p2r(195);
+            z-index: 1;
+            opacity: 0;
+        }
+        .animate-bear3 {
+            whRem(290,321)
+            bgc('../images/page4/bear3-3-1.png',290)
+            bottom: p2r(195);
+            z-index: 1;
+            opacity: 0;
+        }
+    }
+    // 被踢的三块牌子
+    .hit-card-box {
+        .card1 { 
+            bg('../images/page4/license1.png')
+            whRem(228,151)
+            bottom: p2r(500);
+            left: p2r(40);
+            opacity: 0;
+        }
+        .card2 { 
+            bgc('../images/page4/oil1.png',231)
+            whRem(231,156)
+            bottom: p2r(660);
+            opacity: 0;
+        }
+        .card3 { 
+            bg('../images/page4/evil21.png')
+            whRem(211,173)
+            bottom: p2r(480);
+            right: p2r(30);
+            opacity: 0;
+        }
+    }
+}
+.page3.animate {
+    .bg { animation: rotateInNotOut .5s forwards;}
+    .bear { animation: bearDown .5s .5s forwards;}
+    .license { animation: small2big2small .5s 1s forwards, runUpDownLeftRight 2.5s 1.5s infinite;}
+    .oil { animation: small2big2small .5s 1s forwards, runUpDownLeftRight 1.5s 1.5s infinite;}
+    .evil { animation: small2big2small .5s 1s forwards, runUpDownLeftRight 2s 1.5s infinite;}
+}

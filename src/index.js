@@ -9,13 +9,24 @@ import zeptoTouch from 'zepto/src/touch.js'
 import 'swiper/dist/css/swiper.css'
 import './assets/stylus/index.styl'
 
+let intervalBear
 
 var swiper = new Swiper('.swiper-container',{
     direction: 'vertical',
     on: {
-        slideChangeTransitionEnd:function(swiper) {
+        slideChangeTransitionEnd:function() {
+            console.log(this)
             let index = this.activeIndex
             $('.swiper-slide').eq(index).addClass('animate').siblings().removeClass('animate');
+            if(index === 2){
+                $('.swiper-slide').eq(index).addClass('swiper-no-swiping')
+            }
+            if(this.previousIndex===2){ //如果是从第3页滑过来的, 把第3页因为动画添加的style全部清除掉
+                $('.swiper-slide').eq(2).find('.bear').attr('style','')
+                $('.animation-bear-box div').attr('style','')
+                $('.normal-card div').attr('style','')
+                $('.hit-card-box div').attr('style','')
+            }
         }
     }
 })
@@ -42,4 +53,31 @@ $('.welcome .rotate-btn-box').on('longTap',function(){
         $('.welcome').fadeOut(1000)
         $('.page1').addClass('animate')
     },1000)    
+})
+
+
+$('.swiper-slide').eq(2).click(function() {
+    //$(this).removeClass('swiper-no-swiping')
+    //把最开始显示的熊隐藏起来
+    //$(this).children('.bear').css('opacity',0)  //使用这种方式隐藏不了-->因为元素上有animation
+    $(this).children('.bear').css('animation','none')
+    let index = 0;
+    var _this = this
+    intervalBear = setInterval(() => {
+        $(this).find('.animation-bear-box').children().eq(index).show().siblings().hide()
+
+        // 隐藏 normal-card 容器中的牌子
+        $('.normal-card div').eq(index).css('animation','none')
+        // 显示被踢的第几个牌子
+        $('.hit-card-box div').eq(index).css('opacity',1)
+
+        if(index==2){
+            clearInterval(intervalBear)
+            $('.hit-card-box div').css('animation','bearDisappear 1.5s forwards')
+            setTimeout(()=> {
+                $(_this).removeClass('swiper-no-swiping')
+            },1500)
+        }
+        index++
+    }, 1000);
 })
