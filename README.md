@@ -114,4 +114,21 @@ import zeptoTouch from 'zepto/src/touch.js'
   - package.json中增加启动脚本    
     `"start": "webpack-dev-server --mode=development --open",`
 
+## 10. 因为项目中用到了静态资源(mp3音乐文件)
+直接用 copy-webpack-plugin 插件 把mp3文件复制到dist目录中    
+安装：`yarn add -D copy-webpack-plugin`    
+`webpack.config.js`中使用    
+```js
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 
+const config = {
+  plugins: [
+    new CopyWebpackPlugin([
+        {
+            from: path.resolve(__dirname, 'src/assets/music'),
+            to: path.resolve(__dirname, 'dist/music') 
+        }
+    ])
+  ]
+}
+```

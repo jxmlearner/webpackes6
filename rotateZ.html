@@ -23,5 +23,16 @@
 </head>
 <body>
     <div class="box animate"></div>
+    <audio loop src="src/assets/music/hlw.mp3"></audio>
+    <input type="button" value="播放">
+    <script>
+        var audioDom = document.querySelector('audio')
+        var btn = document.querySelector('input')
+        btn.addEventListener('click',function(){
+            if(audioDom.paused) {
+                audioDom.play()
+            }            
+        },false)
+    </script>
 </body>
 </html>

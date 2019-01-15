@@ -527,63 +527,106 @@
             position: absolute;
             top: 0;
             left: 50%;
+            >div {
+                position:absolute;
+                top:0;
+                bottom:0;
+            }
             .gift1 {
                 bgc('../images/page7/gift1.png',39)
                 whRem(39,25)
-                transform: rotateZ(28deg) translateY(p2r(240));
             }
             .gift2 {
                 bgc('../images/page7/gift2.png',93)
                 whRem(93,79)
-                transform: rotateZ(28*2deg) translateY(p2r(240));
             }
             .gift3 {
                 bgc('../images/page7/gift3.png',72)
                 whRem(72,64)
-                transform: rotateZ(28*3deg) translateY(p2r(240));
             }
             .gift4 {
                 bgc('../images/page7/gift4.png',91)
                 whRem(91,73)
-                transform: rotateZ(28*4deg) translateY(p2r(240));
             }
             .gift5 {
                 bgc('../images/page7/gift5.png',107)
                 whRem(99,65)
-                transform: rotateZ(28*5deg) translateY(p2r(240));
             }
             .gift6 {
                 bgc('../images/page7/gift6.png',107)
                 whRem(107,80)
-                transform: rotateZ(28*6deg) translateY(p2r(240));
             }
             .gift7 {
                 bgc('../images/page7/gift7.png',107)
                 whRem(107,80)
-                transform: rotateZ(28*7deg) translateY(p2r(240));
             }
             .gift8 {
                 bgc('../images/page7/gift8.png',88)
                 whRem(88,64)
-                transform: rotateZ(28*8deg) translateY(p2r(240));
             }
             .gift9 {
                 bgc('../images/page7/gift9.png',78)
                 whRem(78,50)
-                transform: rotateZ(28*9deg) translateY(p2r(240));
             }
             .gift10 {
                 bgc('../images/page7/gift10.png',49)
                 whRem(49,37)
-                transform: rotateZ(28*10deg) translateY(p2r(240));
             }
             .gift11 {
                 bgc('../images/page7/gift11.png',51)
                 whRem(51,31)
-                transform: rotateZ(28*11deg) translateY(p2r(240));
             }
             .gift12 {
                 bgc('../images/page7/gift12.png',37)
+                whRem(37,23)
+            }
+        }
+        .gift-box{
+            >div:nth-child(1) {
+                whRem(39,25)
+                transform: rotateZ(28deg) translateY(p2r(240));
+            }
+            >div:nth-child(2) {
+                whRem(93,79)
+                transform: rotateZ(28*2deg) translateY(p2r(240));
+            }
+            >div:nth-child(3) {
+                whRem(72,64)
+                transform: rotateZ(28*3deg) translateY(p2r(240));
+            }
+            >div:nth-child(4) {
+                whRem(91,73)
+                transform: rotateZ(28*4deg) translateY(p2r(240));
+            }
+            >div:nth-child(5) {
+                whRem(99,65)
+                transform: rotateZ(28*5deg) translateY(p2r(240));
+            }
+            >div:nth-child(6) {
+                whRem(107,80)
+                transform: rotateZ(28*6deg) translateY(p2r(240));
+            }
+            >div:nth-child(7) {
+                whRem(107,80)
+                transform: rotateZ(28*7deg) translateY(p2r(240));
+            }
+            >div:nth-child(8) {
+                whRem(88,64)
+                transform: rotateZ(28*8deg) translateY(p2r(240));
+            }
+            >div:nth-child(9) {
+                whRem(78,50)
+                transform: rotateZ(28*9deg) translateY(p2r(240));
+            }
+            >div:nth-child(10) {
+                whRem(49,37)
+                transform: rotateZ(28*10deg) translateY(p2r(240));
+            }
+            >div:nth-child(11) {
+                whRem(51,31)
+                transform: rotateZ(28*11deg) translateY(p2r(240));
+            }
+            >div:nth-child(12) {
                 whRem(37,23)
                 transform: rotateZ(28*12deg - 5deg) translateY(p2r(240));
             }
@@ -1031,4 +1074,123 @@
     .license { animation: small2big2small .5s 1s forwards, runUpDownLeftRight 2.5s 1.5s infinite;}
     .oil { animation: small2big2small .5s 1s forwards, runUpDownLeftRight 1.5s 1.5s infinite;}
     .evil { animation: small2big2small .5s 1s forwards, runUpDownLeftRight 2s 1.5s infinite;}
+}
+
+// swiper page4 动画
+.page4 {
+    .bg { opacity: 0;  transform-origin: 50% 200%; }
+    .bear{ opacity: 0; }
+    .sphere{ opacity: 0; }
+    .card1{ opacity: 0; }
+    .card2{ opacity: 0; }
+    .card3{ opacity: 0; }
+}
+.page4.animate {
+    .bg { animation: rotateInNotOut .5s forwards;}
+    .bear { animation: bearDown .5s .5s forwards;}
+    .card1 {
+        animation: small2big2small .5s 1s forwards;
+    }
+    .card2 {
+        animation: small2big2small .5s 1s forwards;
+    }
+    .card3 {
+        animation: small2big2small .5s 1s forwards;
+    }
+}
+
+// swiper page5 动画
+@keyframes snowLeft {
+    from {}
+    to {
+        transform: translateY(1000%) translateX(-200%);
+    }
+}
+@keyframes snowRight {
+    from {}
+    to {
+        transform: translateY(1000%) translateX(200%);
+    }
+}
+.page5 {
+    .bg { opacity: 0;  transform-origin: 50% 200%; }
+    .bear {opacity: 0;}
+    .smoke { opacity:0; }
+    .sphere {opacity: 0;}
+    .cloud{
+        opacity: 0;
+        .snow {
+            bg('../images/page6/snow-piece.png')
+            whRem(32,32);
+            bottom:0;
+            opacity: 0;
+        }
+        .snow:nth-child(2) {
+            left:p2r(32);
+        }
+        .snow:nth-child(3) {
+            left:p2r(32*2);
+        }
+        .snow:nth-child(4) {
+            left:p2r(32*3);
+        }
+        .snow:nth-child(5) {
+            left:p2r(32*4);
+        }
+        .snow:nth-child(6) {
+            left:p2r(32*5);
+        }
+    }
+}
+.page5.animate {
+    .bg { animation: rotateInNotOut .5s forwards;}
+    .bear { animation: bearDown .5s .5s forwards, upandDown .5s 1s infinite;}
+    .smoke {
+        animation: small2big .5s 1s infinite;
+    }
+    .cloud {
+        animation: small2big2small .5s 1s forwards, runUpDownLeftRight 2s 1.5s infinite;
+        .snow { opacity: 1;}
+        .snow:nth-child(1) { animation: snowLeft .5s 1.5s infinite; }
+        .snow:nth-child(2) { animation: snowRight .3s 1.5s infinite; }
+        .snow:nth-child(3) { animation: snowLeft 1s 1.5s infinite; }
+        .snow:nth-child(4) { animation: snowRight 2s 1.5s infinite; }
+        .snow:nth-child(5) { animation: snowLeft 2.5s 1.5s infinite; }
+        .snow:nth-child(6) { animation: snowRight .8s 1.5s infinite; }
+    }
+}
+
+// swiper page6 动画 
+@keyframes none2Normal {
+    from { transform: none;}
+    to { opacity: 1; }
+}
+.page6 {
+    .gift-box>div { opacity: 0; }
+}
+.page6.animate {
+    // .gift-box>div {
+    //     animation: none2Normal 1s infinite;
+    // }
+    // .gift-box>div>div {
+    //     animation: rotate 1s .5s infinite;
+    // }
+    for i in (1..12) {
+        .gift-box>div:nth-child({i}) {  animation: none2Normal 2s i*0.1s infinite;  }
+        .gift-box>div:nth-child({i})>div { animation: rotate 1s i*0.1s infinite; }
+    }                 
+}
+
+
+// 音乐播放
+.audioControl {
+    whRem(36,36)
+    position: absolute;
+    top: p2r(32);
+    right: p2r(32);
+    background: url('../images/pause.png') no-repeat center/100% 100%;
+    z-index: 998;
+}
+.audioControl.pause{
+    background-image:url('../images/play.png');
 }

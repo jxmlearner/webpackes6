@@ -15,7 +15,7 @@ var swiper = new Swiper('.swiper-container',{
     direction: 'vertical',
     on: {
         slideChangeTransitionEnd:function() {
-            console.log(this)
+            // console.log(this)
             let index = this.activeIndex
             $('.swiper-slide').eq(index).addClass('animate').siblings().removeClass('animate');
             if(index === 2){
@@ -80,4 +80,16 @@ $('.swiper-slide').eq(2).click(function() {
         }
         index++
     }, 1000);
+})
+
+// 播音乐
+$('.audioControl').on('click',function(){
+    let audioDom = document.querySelector('audio')
+    if(audioDom.paused) {
+        audioDom.play()
+        $(this).addClass('pause')
+    }else {
+        audioDom.pause()
+        $(this).removeClass('pause')
+    }
 })

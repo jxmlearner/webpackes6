@@ -1,6 +1,7 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 const webpack = require('webpack')
 
 module.exports ={
@@ -40,6 +41,12 @@ module.exports ={
         new webpack.ProvidePlugin({
             $: 'zepto',
             Zepto: 'zepto'
-        })
+        }),
+        new CopyWebpackPlugin([
+            {
+                from: path.resolve(__dirname, 'src/assets/music'),
+                to: path.resolve(__dirname, 'dist/music') 
+            }
+        ])
     ]
 }
