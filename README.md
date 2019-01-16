@@ -132,3 +132,88 @@ const config = {
   ]
 }
 ```
+
+## 11. 将样式打包到css文件中（而不是link引入的）
+需要用到webpack的插件(webpack4.x之后的版本使用) `mini-css-extract-plugin` [github地址](https://github.com/webpack-contrib/mini-css-extract-plugin)
+1. 安装  `yarn add -D mini-css-extract-plugin`
+2. 在webpack.config.js文件中配置并使用
+```js
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");      // 把样式打包成文件只在生产环境下使用
+const devMode = process.env.NODE_ENV !== 'production'
+
+module.exports = {
+  plugins: [
+    new MiniCssExtractPlugin({
+      // Options similar to the same options in webpackOptions.output
+      // both options are optional
+      filename: devMode ? '[name].css' : '[name].[hash].css',
+      chunkFilename: devMode ? '[id].css' : '[id].[hash].css',
+    })
+  ],
+  module: {
+    rules: [
+        {test: /\.css$/, use: [
+            devMode ? 'style-loader' : MiniCssExtractPlugin.loader,
+            'css-loader'
+        ]},
+        {test: /\.styl$/, use: [
+            devMode ? 'style-loader' : MiniCssExtractPlugin.loader,
+            'css-loader','stylus-loader'
+        ]}
+    ]
+  }
+}
+```
+3. 上面的配置中要修改process.env.NODE_ENV的值为production,所以安装 cross_env   `yarn add -D cross-env` 参考：https://www.cnblogs.com/usebtf/p/9912413.html    
+   接着 配置打包生产环境的脚本  `"build": "cross-env NODE_ENV=production webpack --config webpack.config.js"`
+4. 执行 `npm run build`可以看到样式被单独打包到了一个 css中
+5. 把所有的样式打包进一个样式文件中（经实践，我发现上面已经只有一个样式文件）,还是按文档来, 为 webpack.config.js增加
+```js
+optimization: {
+    splitChunks: {
+        cacheGroups: {
+            styles: {
+                name: 'styles',
+                test: /\.css$|\.styl$/,
+                chunks: 'all',
+                enforce: true
+            }
+        }
+    }
+},
+```
+6. 上面虽然把样式打包到了一个样式文件中,但样式是没有压缩的, webpack4需要安装插件 `optimize-css-assets-webpack-plugin` js压缩使用 `uglifyjs-webpack-plugin`
+`yarn add -D optimize-css-assets-webpack-plugin uglifyjs-webpack-plugin` 安装之后在`webpack.config.js`中使用
+```javascript
+const UglifyJsPlugin = require("uglifyjs-webpack-plugin")
+const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin")
+
+optimization: {
+    splitChunks: {
+        cacheGroups: {
+            styles: {
+                name: 'styles',
+                test: /\.css$|\.styl$/,
+                chunks: 'all',
+                enforce: true
+            }
+        }
+    },
+    minimizer: [
+        new UglifyJsPlugin({
+            cache: true,
+            parallel: true,
+            sourceMap: true // set to true if you want JS source maps
+        }),
+        new OptimizeCSSAssetsPlugin({})
+    ]
+},
+```
+经过上面的步骤,本以为大功告成了,npm run build打包的时候出错：   
+![swiper4.x打包uglify压缩时dom7错误](./md/builderror.png)     
+通过网上的番搜索,大致的原因是  swiper4.x或者dom7中使用了es6的语法, 而uglify压缩js不能有es6语法,所以报错,解决办法就是将swiper和dom7先用babel-loader解析(变成了es5),       
+然后再压缩就不会报错了, 修改 webpack.config.js
+```javascript
+// 一般的写法是这样的  {test: /\.js$/, exclude:/node_modules/, use: ['babel-loader']},
+{test: /\.js$/, include:[path.resolve(__dirname,'src'),path.resolve(__dirname,'node_modules/swiper'),path.resolve(__dirname,'node_modules/dom7')], use: ['babel-loader']},
+```
