@@ -1,3 +1,7 @@
+# ES6 + stylus + zepto.js + webpack4.x 项目示例
+  [在线预览](https://jxmlearner.github.io/webpackes6/build/)
+
+# 项目步骤
 ## 1. `yarn add swiper zepto`
 ## 2. 起先是想用js引入的方式直接写    
    还是练习一下webpack的使用以及ES6 import模块化加载的方式     
