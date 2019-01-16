@@ -1,5 +1,5 @@
 # ES6 + stylus + zepto.js + webpack4.x 项目示例
-  [在线预览](https://jxmlearner.github.io/webpackes6/build/)
+  [在线预览](https://jxmlearner.github.io/webpackes6/build/)   (chrome浏览器下F12切换到手机模式)
 
 # 项目步骤
 ## 1. `yarn add swiper zepto`
@@ -215,7 +215,7 @@ optimization: {
 ```
 经过上面的步骤,本以为大功告成了,npm run build打包的时候出错：   
 ![swiper4.x打包uglify压缩时dom7错误](./md/builderror.png)     
-通过网上的番搜索,大致的原因是  swiper4.x或者dom7中使用了es6的语法, 而uglify压缩js不能有es6语法,所以报错,解决办法就是将swiper和dom7先用babel-loader解析(变成了es5),       
+通过网上一番搜索,大致的原因是  swiper4.x或者dom7中使用了es6的语法, 而uglify压缩js不能有es6语法,所以报错,解决办法就是将swiper和dom7先用babel-loader解析(变成了es5),       
 然后再压缩就不会报错了, 修改 webpack.config.js
 ```javascript
 // 一般的写法是这样的  {test: /\.js$/, exclude:/node_modules/, use: ['babel-loader']},
